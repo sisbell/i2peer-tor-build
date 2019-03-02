@@ -1,11 +1,11 @@
 # vim: filetype=yaml sw=2
 filename: '[% project %]-[% c("version") %]-[% c("var/osname") %]-[% c("var/build_id") %]'
-version: 0.4.0.1-alpha
-git_hash: 'tor-[% c("version") %]'
+version: 0.4.0
+git_hash: 'release-[% c("version") %]'
 git_url: https://git.torproject.org/tor.git
 git_submodule: 1
 gpg_keyring: tor.gpg
-tag_gpg_id: 1
+tag_gpg_id: 0 
 
 var:
   container:
@@ -17,11 +17,6 @@ var:
     - unzip
 
 targets:
-  nightly:
-    version: '[% c("abbrev") %]'
-    git_hash: master
-    tag_gpg_id: 0
-
   linux:
     var:
       arch_deps:
